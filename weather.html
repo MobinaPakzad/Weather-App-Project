@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather app</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,7 +14,101 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <p></p>
+    <div class="container">
+      <div>
+        <h1 id="city">Tehran</h1>
+        <h2>Tue,January24 23:59</h2>
+        <div class="card" style="width: 18rem">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body"></div>
+        </div>
+        <ul>
+          <li>
+            <span id="Tempreature">19</span
+            ><a href="#" id="celsiusLink">°C</a> /
+            <a href="#" id="fahrenhietLink">°F</a>
+          </li>
+          <li>Humidity: <span id="humidity">81</span>%</li>
+          <li>Wind: <span id="Wind">8</span> km/h</li>
+        </ul>
+        <form id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                id="search-city"
+                type="search"
+                placeholder="Search the city"
+                class="form-control"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="search"
+                class="form-control btn btn-primary"
+              />
+              <button type="button" class="btn btn-info">Current</button>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-sm-2 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Wednesday</h5>
+                <img src="media/clear-day.svg" class="free" />
+                <p class="card-text">9°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Thursday</h5>
+                <img src="media/clear-day.svg" class="free" />
+                <p class="card-text">10°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Friday</h5>
+                <img src="media/cloudy.svg" class="free" />
+                <p class="card-text">7°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Saturday</h5>
+                <img src="media/partly-cloudy-day.svg" class="free" />
+                <p class="card-text">11°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Sunday</h5>
+                <img src="media/cloudy.svg" class="free" />
+                <p class="card-text">5°</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Monday</h5>
+                <img src="media/clear-day.svg" class="free" />
+                <p class="card-text">10°</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="src/weather.js"></script>
 </html>
