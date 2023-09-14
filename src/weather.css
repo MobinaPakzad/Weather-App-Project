@@ -15,7 +15,7 @@ ul {
   list-style: none;
   position: relative;
   bottom: 60px;
-  left: 320px;
+  left: 305px;
 }
 #tempreature {
   font-size: 45px;
@@ -23,6 +23,10 @@ ul {
 #units {
   position: relative;
   bottom: 18px;
+}
+.description {
+  position: relative;
+  bottom: 10px;
 }
 form {
   position: relative;
@@ -34,4 +38,7 @@ form {
   position: relative;
   bottom: 38px;
   left: 120px;
+}
+.card {
+  border-color: #fff;
 }
