@@ -40,6 +40,16 @@ function showTemp(response) {
   city.innerHTML = response.data.city;
   let tempreature = document.querySelector("#tempreature");
   tempreature.innerHTML = Math.round(response.data.temperature.current);
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.temperature.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  icon.setAttribute("alt", response.data.condition.description);
 }
 function cityName(city) {
   let apiKey = `47b8a1e3deb146o2b0d0f91ac0t39049`;
