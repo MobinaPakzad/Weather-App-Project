@@ -23,9 +23,20 @@ ul {
 #tempreature {
   font-size: 45px;
 }
-#units {
+.units {
   position: relative;
   bottom: 18px;
+}
+a {
+  text-decoration: none;
+}
+.active {
+  color: #212529;
+
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
 }
 .description {
   position: relative;
@@ -42,6 +53,7 @@ form {
   bottom: 38px;
   left: 120px;
 }
+
 .card {
   border-color: #fff;
 }
