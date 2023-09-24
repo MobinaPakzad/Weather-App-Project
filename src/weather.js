@@ -38,6 +38,8 @@ h2.innerHTML = `${day},${month} ${hour}:${minute}`;
 function showTemp(response) {
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
+  let h3 = document.querySelector("h3");
+  h3.innerHTML = response.data.weather[0].description;
   let tempreature = document.querySelector("#tempreature");
   celsiusTemperature = response.data.main.temp;
   tempreature.innerHTML = Math.round(celsiusTemperature);

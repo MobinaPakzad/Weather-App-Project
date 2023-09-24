@@ -12,21 +12,26 @@ body {
 h2 {
   font-size: 25px;
 }
+h3 {
+  font-size: 24px;
+}
 #icon {
-  max-width: 50%;
+  max-width: 135px;
+  position: relative;
+  bottom: 2px;
 }
 ul {
   list-style: none;
   position: relative;
-  bottom: 160px;
-  left: 200px;
+  bottom: 155px;
+  left: 170px;
 }
 #tempreature {
   font-size: 45px;
 }
 .units {
   position: relative;
-  bottom: 18px;
+  bottom: 19px;
 }
 a {
   text-decoration: none;
@@ -41,20 +46,27 @@ a {
 }
 .description {
   position: relative;
-  bottom: 10px;
+  bottom: 5px;
 }
 form {
   position: relative;
   max-width: 350px;
-  bottom: 425px;
+  bottom: 426px;
   left: 500px;
 }
 .btn-info {
   position: relative;
   bottom: 38px;
-  left: 120px;
+  left: 95px;
 }
 
 .card {
   border-color: #fff;
+}
+#forecast {
+  position: relative;
+  bottom: 40px;
+}
+small {
+  margin-left: 165px;
 }
