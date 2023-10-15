@@ -35,6 +35,45 @@ if (minute < 10) {
 }
 let h2 = document.querySelector("#date");
 h2.innerHTML = `${day},${month} ${hour}:${minute}`;
+function forecastDate(timestamp) {
+  let now = new Date(timestamp * 1000);
+  console.log(now);
+  let day = now.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+function showForecastTemp(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHtml = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="col-sm-2 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">${forecastDate(forecastDay.time)}</h5>
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png" class="free" />
+                <p class="card-text">${Math.round(
+                  forecastDay.temperature.maximum
+                )}°|${Math.round(forecastDay.temperature.minimum)}°</p>
+              </div>
+            </div>
+          </div>`;
+    }
+  });
+  forecastHtml = forecastHtml + `</div>`;
+  forecastElement.innerHTML = forecastHtml;
+}
+function displayForecast(coordinates) {
+  let apiKey = `47b8a1e3deb146o2b0d0f91ac0t39049`;
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
+
+  axios.get(forecastUrl).then(showForecastTemp);
+}
 
 function showTemp(response) {
   let city = document.querySelector("#city");
@@ -54,6 +93,7 @@ function showTemp(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   icon.setAttribute("alt", response.data.condition.icon);
+  displayForecast(response.data.coordinates);
 }
 function cityName(city) {
   let apiKey = `47b8a1e3deb146o2b0d0f91ac0t39049`;
