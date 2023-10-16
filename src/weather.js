@@ -37,7 +37,7 @@ let h2 = document.querySelector("#date");
 h2.innerHTML = `${day},${month} ${hour}:${minute}`;
 function forecastDate(timestamp) {
   let now = new Date(timestamp * 1000);
-  console.log(now);
+
   let day = now.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
@@ -56,10 +56,12 @@ function showForecastTemp(response) {
                 <h5 class="card-title">${forecastDate(forecastDay.time)}</h5>
                 <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                   forecastDay.condition.icon
-                }.png" class="free" />
+                }.png" class="forecast-icon" />
                 <p class="card-text">${Math.round(
                   forecastDay.temperature.maximum
-                )}°|${Math.round(forecastDay.temperature.minimum)}°</p>
+                )}°|<span id="minimum">${Math.round(
+          forecastDay.temperature.minimum
+        )}°</span></p>
               </div>
             </div>
           </div>`;
