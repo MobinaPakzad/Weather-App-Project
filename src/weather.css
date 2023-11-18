@@ -79,3 +79,9 @@ form {
 small {
   margin-left: 178px;
 }
+.small {
+  color: #2e79ba;
+}
+.small:hover {
+  text-decoration: underline;
+}
